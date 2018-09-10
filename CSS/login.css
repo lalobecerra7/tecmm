@@ -1,0 +1,36 @@
+*{
+	padding:0;
+	margin:0;
+}
+
+body{
+	background-color:#680508;
+}
+
+.main{
+	padding-top:6%;
+}
+
+.login{
+	padding:5%;
+	background-color:#ffffff;
+	box-shadow: 1px 1px 42px 5px black;
+	border-radius: 13px;
+}
+
+.incorrecto{
+	background:rgba(255,0,0,.5);
+	font-size:18px;
+	text-align:center;
+	width:100%;
+	position:fixed;
+	margin-top:0;
+	display: none;
+}
+.campo{
+	box-shadow: 1px 1px 15px -2px black;
+}
+.ingresar{
+	background-color: #890d14;
+	color: white;
+}
