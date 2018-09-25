@@ -1,15 +1,15 @@
-$(document).ready(function() {
-	$("#login").submit(function(e){
+$(document).ready(function(){
+	$("#login").submit(function(e) {
 		e.preventDefault();
 		$.ajax({
 			type:"POST",
 			url:"login.php",
 			data:({
 				usuario : $.trim($("#usuario").val()),
-				contrasena : $("#contrasena").val()
+				contra : $("#pass").val()
 			}),
-			dataType: "html",
-			beforeSend: function(){
+			dataType : "html",
+			beforeSend : function(){
 				$("#ingresar").html("Iniciando...");
 			},
 			success: function(msg){
@@ -19,7 +19,11 @@ $(document).ready(function() {
 					setTimeout(function(){	
 						$("#incorrecto").slideUp("slow");					
 					},3000);
+					$("#usuario").addClass('is-invalid');
+					$("#pass").addClass('is-invalid');
 				}else{
+					$("#usuario").addClass('is-valid');
+					$("#pass").addClass('is-valid');
 					window.location.href = "Aplicacion/";
 				}
 			}

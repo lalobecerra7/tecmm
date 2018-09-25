@@ -19,12 +19,7 @@ body{
 }
 
 .incorrecto{
-	background:rgba(255,0,0,.5);
-	font-size:18px;
-	text-align:center;
-	width:100%;
-	position:fixed;
-	margin-top:0;
+
 	display: none;
 }
 .campo{
