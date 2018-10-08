@@ -28,8 +28,16 @@
 <br>
 <div class="row">
   <div class="container-fluid">
+    <div class="text-center">
+      <h1>Usuarios</h1>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="container-fluid">
     <div class="col-lg-12">
-        <button class="btn btn-block btnUsu" data-toggle="modal" data-target="#ModalBitacoras"><b>Agregar Usuario</b></button>
+        <button class="btn btn-block btnAgregar" data-toggle="modal" data-target="#ModalBitacoras"><b>Agregar Usuario</b></button>
     </div>
   </div>  
 </div>
@@ -64,7 +72,7 @@
     </div>  
   </div>
 
-<!--MODAL DE BITACORAS-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::MODAL DE USUARIO:::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 <div class="modal fade" id="ModalBitacoras" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-success" role="document">
     <div class="modal-content">
@@ -102,6 +110,29 @@
           <button type="submit" class="btn Guardar">Guardar Cambios</button>
         </div>
       </form>
+    </div>
+  </div>
+</div>
+
+<!--:::::::::::::::::::::::::::::::::::::::::::MODAL DE EDITAR USUARIO:::::::::::::::::::::::::::::::::::::::::::::::::::-->
+<div class="modal fade" id="ModalEditarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-success" role="document">
+    <div class="modal-content">
+      <div class="modal-header headerModal">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+          <form id="FormUsuarioEditar">
+            <div id="datosUsuario"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn Guardar" id="modificarUsuario">Guardar Cambios</button>
+        </div>
+        </form>
     </div>
   </div>
 </div>

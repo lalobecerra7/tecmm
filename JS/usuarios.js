@@ -38,7 +38,7 @@ $(document).ready(function(){
 					  "columns": [
 					      {
 					        "data": "Acciones",
-					        "defaultContent": "<button class='btn btn-danger CancelarUsuario'><img src='../../Imagenes/garbage.png' style='width: 17px;'/></button> <button class='btn btn-primary' id='editarUsuario' data-toggle='modal' data-target='#ModalEditarOfertas'><img src='../../Imagenes/configurar.png' style='width: 17px;'/></button>",
+					        "defaultContent": "<button class='btn btn-danger CancelarUsuario'><img src='../../Imagenes/garbage.png' style='width: 17px;'/></button> <button class='btn btn-primary' id='editarUsuario' data-toggle='modal' data-target='#ModalEditarUsuario'><img src='../../Imagenes/configurar.png' style='width: 17px;'/></button>",
 					        "targets": 0
 					      },
 					      { "data": "ID",
@@ -117,24 +117,60 @@ $(document).on("click", ".CancelarUsuario",function(){
     }).setHeader('Eliminar Usuario').set({labels:{ok:'Ok', cancel: 'Cancelar'}});
 	});
 
-  $(document).on('click', '#editarOferta', function() {
-	 var data1 = tablaOfertas.row( $(this).parents('tr') ).data()["ID"];
+$(document).on('click', '#editarUsuario', function() {
+	 var data1 = tablaUsuarios.row( $(this).parents('tr') ).data()["ID"];
 		var id = data1;
 	$.ajax({
-		url: 'php/funciones.php',
+		url: 'funcionesUsuarios.php',
 		type: 'POST',
 		data: {
 			ID: id, 
-			funcion: "MostrarOferta"
+			funcion: "MostrarUsuario"
 		}
 	})
 	.done(function(res) {
-		$("#datosOfertas").html(res);
+		$("#datosUsuario").html(res);
 	})
 	.fail(function() {
 		console.log("error");
 	});
 });
+
+$("#FormUsuarioEditar").submit(function(e) {
+		if ($("#tipoUsuarioE option:selected").val()=="0") {
+			 alertify.alert().setHeader('Error').set('message', 'Seleccione un tipo de usuario').show(); 
+			$("#tipoUsuarioE").focus();
+			return false;
+		}
+		e.preventDefault();	
+		$.ajax({
+			type:"POST",
+			url:"funcionesUsuarios.php",
+			data:({
+				funcion: "ModificarUsuario",
+				Nombre : $("#NombreCompletoUsuarioE").val(),
+				Usuario : $("#NombreUsuarioE").val(),
+				Contra : $("#ContraUsuarioE").val(),
+				Tipo : $("#tipoUsuarioE option:selected").val(),
+				ID: $("#IDUsu").val()
+			}),
+			dataType : "html",
+			success: function(msg){
+				if (msg == "Error al guardar") {
+				alertify.error(msg);
+				}else{
+				alertify.success(msg);
+				tablaUsuarios.ajax.reload();
+				$("#ModalEditarUsuario").modal('toggle');
+				$("#NombreCompletoUsuario").val("");
+				$("#NombreUsuario").val("");
+				$("#ContraUsuario").val("");
+				$("#tipoUsuario").val("0");
+				}
+				
+			}
+		});		
+	});
 
 
 });

@@ -8,3 +8,4 @@
   <link rel="stylesheet" href="../../Datatables/responsive.bootstrap4.min.css">
  <link rel="stylesheet" href="../../alertify/css/alertify.min.css">
   <link rel="stylesheet" href="../../alertify/css/themes/default.min.css">
+  <link rel="stylesheet" href="../../CSS/estilo.css">

@@ -7,20 +7,21 @@
     }else{
       if ($_SESSION["Nombre"]["FK_ID_Tipo_Usuario"] == "1") {
         $opcAgregar = '<a class="dropdown-item" href="Usuarios">Agregar Usuario</a>';
+        $opcMatGrupo = '<a class="dropdown-item" href="GrupoCarrera"> Grupo - Carrera</a>';
+        $opcMateriaGrupo = '<a class="dropdown-item" href="MateriaGrupo"> Materia - Grupo</a>';
       }else{
         $opcAgregar = '';
+      	 $opcMatGrupo = '';
+      	 $opcMateriaGrupo ='';
       }
     }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>TecMM Arandas</title>
-  <link rel="shortcut icon" href="../Imagenes/favicon.ico" type="image/x-icon">
-   <link rel="stylesheet" href="../Bootstrap/css/bootstrap.min.css" type="text/css" charset="utf-8"/>
-   <link rel="stylesheet" href="../Bootstrap/css/bootstrap-grid.css">
+  <?php 
+  include("header2.php");
+   ?>
  </head>
 <body>
 <div class="row">
@@ -47,6 +48,10 @@
 		          <a class="dropdown-item" href="#">Laboratorios</a>
 		          <a class="dropdown-item" href="#">Carrera</a>
 		          <a class="dropdown-item" href="#">Semestre</a>
+		          <?php 
+                  echo $opcMatGrupo;
+                  echo $opcMateriaGrupo;
+                  ?>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="Bitacora/">Bitácora</a>
@@ -58,7 +63,7 @@
 		        <a class="nav-link" href="#">Planeaciones</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Prácticas</a>
+		        <a class="nav-link" href="Practicas/">Prácticas</a>
 		      </li>
 		    </ul>
 		     <ul class="navbar-nav offset-lg-6">
@@ -79,6 +84,7 @@
 		</nav>
 	</div>
 </div>
+
 <script type="text/javascript" src="../JS/jquery-3.2.1.min.js"></script>
    <script src="../Bootstrap/js/bootstrap.min.js"></script>
 </body>

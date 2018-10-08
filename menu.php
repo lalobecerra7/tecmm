@@ -6,13 +6,16 @@
     }else{
       if ($_SESSION["Nombre"]["FK_ID_Tipo_Usuario"] == "1") {
         $opcAgregar = '<a class="dropdown-item" href="../Usuarios"> Agregar Usuario</a>';
+        $opcMatGrupo = '<a class="dropdown-item" href="../GrupoCarrera"> Grupo - Carrera</a>';
+        $opcMateriaGrupo = '<a class="dropdown-item" href="../MateriaGrupo"> Materia - Grupo</a>';
       }else{
         $opcAgregar = '';
+        $opcMatGrupo = '';
+        $opcMateriaGrupo = ''; 
       }
     }
 ?>
-<div class="row">
-    <div class="container-fluid">
+
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand"><img src="../../Imagenes/ITMM copia.PNG" width="100px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +38,10 @@
                 <a class="dropdown-item" href="#">Laboratorios</a>
                 <a class="dropdown-item" href="#">Carrera</a>
                 <a class="dropdown-item" href="#">Semestre</a>
+                <?php 
+                echo $opcMatGrupo;
+                echo $opcMateriaGrupo;
+                 ?>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../Bitacora/">Bitácora</a>
@@ -46,7 +53,7 @@
               <a class="nav-link" href="#">Planeaciones</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Prácticas</a>
+              <a class="nav-link" href="../Practicas/">Prácticas</a>
             </li>
           </ul>
           <ul class="navbar-nav offset-lg-6">
@@ -65,6 +72,6 @@
           </ul>
         </div>
       </nav>
-    </div>
-</div>
+  
+
 

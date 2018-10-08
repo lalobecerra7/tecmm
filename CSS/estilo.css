@@ -27,20 +27,18 @@
 	background-color: #751f21;
 	border-color: white;
 }
-.Cerrar{
-	color: black;
-	background-color: white;
-	border-color: red;
-}
-.Cerrar:hover{
+.btnAgregar{
 	color: white;
-	background-color: red;
-	border-color: white;
+	background-color: #b42f2c;
+}
+.btnAgregar:hover{
+	background-color: #751f21;
 }
 .botonImprimir{
 	width:30px;
 }
 .dataTables_wrapper .dt-buttons {
   float:none;  
+  line-height: 60px;
   text-align:center;
 }
