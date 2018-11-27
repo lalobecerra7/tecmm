@@ -1,4 +1,4 @@
 <?php
-	$con = new PDO('mysql:host=localhost;dbname=tecmm',"root","45431319");
+	$con = new PDO('mysql:host=localhost;dbname=tecmm',"root","");
 
 ?>
